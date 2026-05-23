@@ -1,0 +1,52 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:vm="using:mvvm_edp.ViewModels"
+    x:Class="mvvm_edp.Views.AboutUsTab" x:DataType="vm:AboutUsTabViewModel">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="White" Padding="0,4,0,12">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="8">
+                <TextBlock Text="About Us" FontSize="20" FontWeight="Bold" Foreground="#1A1A2E"
+                    VerticalAlignment="Center" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Classes="card" Padding="32" Margin="0,0,0,8">
+            <StackPanel Spacing="24">
+                <StackPanel Spacing="4">
+                    <TextBlock Text="{Binding AppName}" FontSize="28" FontWeight="Bold"
+                        Foreground="#1A1A2E" />
+                    <TextBlock FontSize="14" Foreground="#888">
+                        <Run Text="Version " />
+                        <Run Text="{Binding Version}" />
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Spacing="8">
+                    <TextBlock Text="About" FontSize="16" FontWeight="SemiBold" Foreground="#1A1A2E" />
+                    <TextBlock Text="{Binding Description}" FontSize="14" Foreground="#555"
+                        TextWrapping="Wrap" MaxWidth="600" />
+                </StackPanel>
+                <StackPanel Spacing="8">
+                    <TextBlock Text="Contact" FontSize="16" FontWeight="SemiBold"
+                        Foreground="#1A1A2E" />
+                    <TextBlock FontSize="14" Foreground="#555">
+                        <Run Text="Email: " />
+                        <Run Text="{Binding ContactEmail}" FontWeight="SemiBold"
+                            Foreground="#5748FA" />
+                    </TextBlock>
+                    <TextBlock FontSize="14" Foreground="#555">
+                        <Run Text="Website: " />
+                        <Run Text="{Binding Website}" FontWeight="SemiBold" Foreground="#5748FA" />
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Spacing="8">
+                    <TextBlock Text="Technology Stack" FontSize="16" FontWeight="SemiBold"
+                        Foreground="#1A1A2E" />
+                    <TextBlock FontSize="14" Foreground="#555">Avalonia UI 12 · .NET 8 ·
+                        CommunityToolkit.Mvvm · EPPlus 7</TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

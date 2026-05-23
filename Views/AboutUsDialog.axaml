@@ -1,0 +1,41 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+    d:DesignWidth="480" d:DesignHeight="395" Width="480" Height="395"
+    WindowStartupLocation="CenterOwner" CanResize="False" CanMaximize="False"
+    x:Class="mvvm_edp.Views.AboutUsDialog" Icon="/Assets/app.ico" Title="About Us">
+    <Border Background="White" Padding="32" CornerRadius="8">
+        <StackPanel Spacing="20">
+            <StackPanel Spacing="4">
+                <TextBlock Text="Mini E-Commerce" FontSize="26" FontWeight="Bold"
+                    Foreground="#1A1A2E" />
+                <TextBlock Text="Version 2.3.1" FontSize="14" Foreground="#888" />
+            </StackPanel>
+            <TextBlock TextWrapping="Wrap" FontSize="14" Foreground="#555" MaxWidth="400"> A
+                lightweight e-commerce management dashboard built with Avalonia UI and .NET MVVM
+                architecture. </TextBlock>
+            <StackPanel Spacing="8">
+                <TextBlock Text="Contact" FontSize="16" FontWeight="SemiBold" Foreground="#1A1A2E" />
+                <TextBlock FontSize="14" Foreground="#555">
+                    <Run Text="Email: " />
+                    <Run Text="support@edp.com" FontWeight="SemiBold" Foreground="#5748FA" />
+                </TextBlock>
+                <TextBlock FontSize="14" Foreground="#555">
+                    <Run Text="Website: " />
+                    <Run Text="www.edp.com" FontWeight="SemiBold" Foreground="#5748FA" />
+                </TextBlock>
+            </StackPanel>
+            <StackPanel Spacing="8">
+                <TextBlock Text="Technology Stack" FontSize="16" FontWeight="SemiBold"
+                    Foreground="#1A1A2E" />
+                <TextBlock FontSize="14" Foreground="#555">Avalonia UI 12 · .NET 8 ·
+                    CommunityToolkit.Mvvm · EPPlus 7</TextBlock>
+            </StackPanel>
+                        <StackPanel Spacing="8">
+                <TextBlock Text="Made By Yours Truly | Jhan" FontSize="16" FontWeight="SemiBold"
+                    Foreground="#1A1A2E" />
+                <TextBlock FontSize="14" Foreground="#555">EDP : Activities: 4, 5, 6, 7</TextBlock>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</Window>

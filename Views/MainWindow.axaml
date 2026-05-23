@@ -1,0 +1,41 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:mvvm_edp.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:mvvm_edp.Models" mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+    x:Class="mvvm_edp.Views.MainWindow" x:DataType="vm:MainWindowViewModel" Icon="/Assets/app.ico"
+    Title="E-Commerce Dashboard">
+    <Design.DataContext>        <!-- This only sets the DataContext for the previewer in an IDE,        to set the
+        actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+    <Grid RowDefinitions="Auto, *, Auto" Margin="0,0,0,0">
+        <Grid Grid.Row="0" ColumnDefinitions="*, *, Auto" Margin="12, 12, 12, 8">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="0"
+                Spacing="6">
+                <Label>Hello,</Label>
+                <Label FontWeight="Black">Admin</Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="1">
+                <Label FontWeight="Black">Mini</Label>
+                <Label>E-commerce</Label>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="10">
+                <Button Command="{Binding ShowReportDialogCommand}" Classes="primary">Reports</Button>
+                <Button Command="{Binding ShowProfileDialogCommand}" Classes="secondary">Profile</Button>
+                <Button Command="{Binding ShowAboutUsDialogCommand}" Classes="secondary">About Us</Button>
+            </StackPanel>
+        </Grid>
+        <TabControl Grid.Row="1" ItemsSource="{Binding Tabs}">            <!-- No need to add Context-->
+            <TabControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Title}"></TextBlock>
+                </DataTemplate>
+            </TabControl.ItemTemplate>
+        </TabControl>
+        <StackPanel Margin="-4, 8, -4, 0" Grid.Row="2" Background="#5748fa">
+            <Label Padding="2" Margin="10, 0, 0, 0" Foreground="White"
+                Content="Database Connection: Connected" />
+        </StackPanel>
+    </Grid>
+</Window>
