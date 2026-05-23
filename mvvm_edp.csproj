@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+
+		<!-- Stable target -->
+		<TargetFramework>net8.0</TargetFramework>
+
+		<Nullable>enable</Nullable>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+
+		<AvaloniaUseCompiledBindingsByDefault>false</AvaloniaUseCompiledBindingsByDefault>
+
+		<!-- Prevent downgrade issues -->
+		<ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<AvaloniaResource Include="Assets\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="Assets\Logo.png" CopyToOutputDirectory="PreserveNewest" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="ViewModels\ITabViewModel.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Avalonia" Version="12.0.0" />
+		<PackageReference Include="Avalonia.Controls.DataGrid" Version="12.0.0" />
+		<PackageReference Include="Avalonia.Desktop" Version="12.0.0" />
+		<PackageReference Include="Avalonia.Themes.Fluent" Version="12.0.0" />
+		<PackageReference Include="Avalonia.Fonts.Inter" Version="12.0.0" />
+		<PackageReference Include="Avalonia.Themes.Simple" Version="12.0.0" />
+
+
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+		<PackageReference Include="MySqlConnector" Version="2.5.0" />
+		<PackageReference Include="Tmds.DBus.Protocol" Version="0.93.0" />
+
+		<!-- IMPORTANT -->
+		<PackageReference Include="EPPlus" Version="7.0.0" />
+
+		<!-- Pin RecyclableMemoryStream to the version EPPlus 7.0.0 expects (avoids conflict with AvaloniaUI.DiagnosticsSupport pulling 3.x) -->
+		<PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="2.3.2" />
+
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Views\OrderItemTab.axaml.cs">
+			<DependentUpon>OrderItemTab.axaml</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+</Project>

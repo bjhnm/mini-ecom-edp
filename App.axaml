@@ -1,0 +1,141 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="mvvm_edp.App"
+             xmlns:local="using:mvvm_edp"
+             xmlns:views="using:mvvm_edp.Views"
+             xmlns:vm="using:mvvm_edp.ViewModels"
+             RequestedThemeVariant="Light">
+    <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.DataTemplates>
+
+
+        <DataTemplate DataType="{x:Type vm:ProductTabViewModel}">
+            <views:ProductTab/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:CustomerTabViewModel}">
+            <views:CustomerTab/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:OrderTabViewModel}">
+            <views:OrderTab/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:OrderItemTabViewModel}">
+            <views:OrderItemTab/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:PaymentTabViewModel}">
+            <views:PaymentTab/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:NewOrderCustomerTabViewModel}">
+            <views:NewOrderCustomerTab/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:NewOrderItemTabViewModel}">
+            <views:NewOrderItemTab/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:NewOrderPaymentTabViewModel}">
+            <views:NewOrderPaymentTab/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:ReportTabViewModel}">
+            <views:ReportTab/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:ProfileTabViewModel}">
+            <views:ProfileTab/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:AboutUsTabViewModel}">
+            <views:AboutUsTab/>
+        </DataTemplate>
+
+    </Application.DataTemplates>
+
+    <Application.Styles>
+        <FluentTheme />
+        <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
+
+        <Style Selector="DataGrid">
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="CornerRadius" Value="8" />
+        </Style>
+        <Style Selector="DataGridCell">
+            <Setter Property="Padding" Value="12,8" />
+        </Style>
+        <Style Selector="DataGridColumnHeader">
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Padding" Value="12,10" />
+            <Setter Property="Background" Value="#F5F5F5" />
+        </Style>
+        <Style Selector="Button.primary">
+            <Setter Property="Background" Value="#5748fa" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Padding" Value="16,8" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+        <Style Selector="Button.primary:pointerover">
+            <Setter Property="Background" Value="#4639e0" />
+        </Style>
+        <Style Selector="Button.primary:pressed">
+            <Setter Property="Background" Value="#3528c0" />
+        </Style>
+        <Style Selector="Button.secondary">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="#5748fa" />
+            <Setter Property="BorderBrush" Value="#5748fa" />
+            <Setter Property="BorderThickness" Value="1.5" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Padding" Value="16,8" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+        <Style Selector="Button.secondary:pointerover">
+            <Setter Property="Background" Value="#f0eeff" />
+        </Style>
+        <Style Selector="Button.danger">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="#d32f2f" />
+            <Setter Property="BorderBrush" Value="#d32f2f" />
+            <Setter Property="BorderThickness" Value="1.5" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Padding" Value="16,8" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+        <Style Selector="Button.danger:pointerover">
+            <Setter Property="Background" Value="#fff0f0" />
+        </Style>
+        <Style Selector="TextBox.search">
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="Padding" Value="36,10,12,10" />
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="BorderThickness" Value="1.5" />
+            <Setter Property="BorderBrush" Value="#E0E0E0" />
+        </Style>
+        <Style Selector="TextBox.search:focus">
+            <Setter Property="BorderBrush" Value="#5748fa" />
+        </Style>
+        <Style Selector="Border.card">
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="#E8E8E8" />
+        </Style>
+        <Style Selector="TextBlock.badge">
+            <Setter Property="Foreground" Value="#5748FA" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="FontSize" Value="13" />
+        </Style>
+        <Style Selector="Border.badge">
+            <Setter Property="Background" Value="#F0EEFF" />
+            <Setter Property="CornerRadius" Value="12" />
+            <Setter Property="Padding" Value="8,2" />
+        </Style>
+    </Application.Styles>
+</Application>
